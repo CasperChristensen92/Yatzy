@@ -27,25 +27,9 @@ public class YatzySelector {
         radioButtons[13] = new RadioButton("Chance");
         radioButtons[14] = new RadioButton("Yatzy");
     }
-    public VBox getVBoxUpper(){
-        VBox vBox = new VBox();
-        vBox.setSpacing(10);
-        for (int i = 0; i < 6; i++) {
-            vBox.getChildren().add(radioButtons[i]);
-        }
-        return vBox;
-    }
-    public VBox getVBoxLower(){
-        VBox vBox = new VBox();
-        vBox.setSpacing(10);
-        for (int i = 6; i < 15; i++) {
-            vBox.getChildren().add(radioButtons[i]);
-
-        }
-        return vBox;
-    }
 
     public RadioButton[] getRadioButtons() {
         return radioButtons;
     }
+
 }

@@ -19,6 +19,15 @@ public class YatzyResultCalculator {
         Arrays.sort(this.sortedIntDice);
     }
 
+    public void setDice(Die[] dice) {
+        this.dice = dice;
+    }
+
+    public void setSortedIntDice() {
+        this.sortedIntDice = diceToInt();
+        Arrays.sort(this.sortedIntDice);
+    }
+
     /**
      * Calculates the score for Yatzy uppersection
      * @param eyes eye value to calculate score for. eyes should be between 1 and 6
@@ -159,20 +168,24 @@ public class YatzyResultCalculator {
         return 0;
     }
     //We have stored stuff in arrays in the other classes and this returns the wanted calculation
-    public int getScore(int i){
-        i+=1;
-        if (i >0 & i<7){
-            return upperSectionScore(i);
+    public int[] getScores(){
+        sortedIntDice = diceToInt();
+        Arrays.sort(sortedIntDice);
+        int[] scoreArray = new int[15];
+        for (int i = 0; i < 6; i++) {
+            scoreArray[i]=upperSectionScore(i+1);
         }
-        if (i==7) return onePairScore();
-        if (i==8) return twoPairScore();
-        if (i==9) return threeOfAKindScore();
-        if (i==10) return fourOfAKindScore();
-        if (i==11) return smallStraightScore();
-        if (i==12) return largeStraightScore();
-        if (i==13) return fullHouseScore();
-        if (i==14) return chanceScore();
-        if (i==15) return yatzyScore();
-        else return 0;
+        scoreArray[6]=onePairScore();
+        scoreArray[7]= twoPairScore();
+        scoreArray[8]= threeOfAKindScore();
+        scoreArray[9]= fourOfAKindScore();
+        scoreArray[10] = smallStraightScore();
+        scoreArray[11] = largeStraightScore();
+        scoreArray[12] = fullHouseScore();
+        scoreArray[13] = chanceScore();
+        scoreArray[14] = yatzyScore();
+        return scoreArray;
     }
+
+        //
 }

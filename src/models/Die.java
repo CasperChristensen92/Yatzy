@@ -18,7 +18,7 @@ public class Die {
     }
 
     public void roll() {
-        eyes = random.nextInt(5)+1;
+        eyes = random.nextInt(6)+1;
     }
 
     public int getEyes() {
