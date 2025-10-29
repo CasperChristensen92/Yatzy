@@ -158,4 +158,21 @@ public class YatzyResultCalculator {
         }
         return 0;
     }
+    //We have stored stuff in arrays in the other classes and this returns the wanted calculation
+    public int getScore(int i){
+        i+=1;
+        if (i >0 & i<7){
+            return upperSectionScore(i);
+        }
+        if (i==7) return onePairScore();
+        if (i==8) return twoPairScore();
+        if (i==9) return threeOfAKindScore();
+        if (i==10) return fourOfAKindScore();
+        if (i==11) return smallStraightScore();
+        if (i==12) return largeStraightScore();
+        if (i==13) return fullHouseScore();
+        if (i==14) return chanceScore();
+        if (i==15) return yatzyScore();
+        else return 0;
+    }
 }
