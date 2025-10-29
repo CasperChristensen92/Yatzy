@@ -18,6 +18,10 @@ public class Die {
     }
 
     public void roll() {
-        //TODO: implement roll method.
+        eyes = random.nextInt(5)+1;
+    }
+
+    public int getEyes() {
+        return eyes;
     }
 }
